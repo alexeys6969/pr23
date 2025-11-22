@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrderingGifts_Шашин.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,7 @@ namespace OrderingGifts_Шашин.Pages
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.mainWindow.frame.Navigate(new Pages.OrderAdd());
         }
 
         private void filter_click(object sender, RoutedEventArgs e)

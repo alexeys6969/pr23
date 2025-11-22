@@ -4,9 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OrderingGifts_Шашин.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="OrderAdd">
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="OrderAdd" Height="469">
     <Grid>
         <Grid Background="#e04e4e" Width="800" Height="70" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
@@ -81,8 +80,16 @@
                 </TextBox.Resources>
             </TextBox>
 
-            <Button Click="AddOrder" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="35,270,400,40" Width="365" Height="25" Background="#7ce04e">
+            <Button Click="AddOrder" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="35,0,35,40" Width="358" Height="25" Background="#7ce04e">
                 <TextBlock x:Name="addTB" Text="Добавить/Изменить заказ" FontFamily="Copperplate Gothic Light"/>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Click="ClickBack" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="35,0,35,40" Width="358" Height="25" Background="#e04e4e">
+                <TextBlock Text="Отмена" FontFamily="Copperplate Gothic Light"/>
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="8"/>

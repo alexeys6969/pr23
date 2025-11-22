@@ -22,10 +22,11 @@ namespace OrderingGifts_Шашин
     public partial class MainWindow : Window
     {
         public static Pages.Main main;
+        public static MainWindow mainWindow;
         public MainWindow()
         {
             InitializeComponent();
-
+            mainWindow = this;
             main = new Pages.Main();
             OpenPageMain();
         }

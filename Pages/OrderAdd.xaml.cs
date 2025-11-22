@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrderingGifts_Шашин.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace OrderingGifts_Шашин.Pages
     /// </summary>
     public partial class OrderAdd : Page
     {
+        Order ord_itm;
         public OrderAdd()
         {
             InitializeComponent();
+
         }
 
         private void AddOrder(object sender, RoutedEventArgs e)
@@ -32,7 +35,12 @@ namespace OrderingGifts_Шашин.Pages
 
         private void Gregory(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Gregory!", "Gregory!", MessageBoxButton.YesNo, MessageBoxImage.Information);
+        }
 
+        private void ClickBack(object sender, RoutedEventArgs e)
+        {
+            MainWindow.mainWindow.frame.Navigate(new Pages.Main());
         }
     }
 }
