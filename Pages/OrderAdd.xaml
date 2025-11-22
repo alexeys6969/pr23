@@ -37,7 +37,7 @@
 
         <Grid Background="White" Margin="0,70,0,0">
             <Label Content="Введите ФИО" Height="30" Foreground="Black" FontFamily="Copperplate Gothic Light" FontSize="16" Margin="35,20,623,330" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox x:Name="fioTB" Margin="35,50,400,0" VerticalAlignment="Top" Height="20" FontFamily="Copperplate Gothic Light">
+            <TextBox x:Name="fioTB" Margin="35,50,35,0" VerticalAlignment="Top" Height="20" FontFamily="Copperplate Gothic Light">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -46,7 +46,7 @@
             </TextBox>
 
             <Label Content="Введите сообщение" Height="28" Foreground="Black" FontFamily="Copperplate Gothic Light" FontSize="16" Margin="35,75,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox x:Name="textTB" Margin="35,105,400,0" Height="20" VerticalAlignment="Top" FontFamily="Copperplate Gothic Light">
+            <TextBox x:Name="textTB" Margin="35,105,35,0" Height="20" VerticalAlignment="Top" FontFamily="Copperplate Gothic Light">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -55,7 +55,7 @@
             </TextBox>
 
             <Label Content="Введите адрес" Height="28" Foreground="Black" FontFamily="Copperplate Gothic Light" FontSize="16" Margin="35,130,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox x:Name="adressTB" Margin="35,160,400,0" Height="20" VerticalAlignment="Top" FontFamily="Copperplate Gothic Light">
+            <TextBox x:Name="adressTB" Margin="35,160,35,0" Height="20" VerticalAlignment="Top" FontFamily="Copperplate Gothic Light">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -63,8 +63,8 @@
                 </TextBox.Resources>
             </TextBox>
 
-            <Label Content="Введите дату (дд.мм.гггг)" Height="28" Foreground="Black" FontFamily="Copperplate Gothic Light" FontSize="16" Margin="35,185,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox x:Name="dateTB" Margin="35,215,400,0" Height="20" VerticalAlignment="Top" FontFamily="Copperplate Gothic Light">
+            <Label Content="Введите дату и время (дд.мм.гггг чч.мм)" Height="28" Foreground="Black" FontFamily="Copperplate Gothic Light" FontSize="16" Margin="35,185,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox x:Name="dateTB" Margin="35,215,35,0" Height="20" VerticalAlignment="Top" FontFamily="Copperplate Gothic Light">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -73,7 +73,7 @@
             </TextBox>
 
             <Label Content="Введите адрес электронной почты" Height="28" Foreground="Black" FontFamily="Copperplate Gothic Light" FontSize="16" Margin="35,240,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox x:Name="emailTB" Margin="35,270,400,0" Height="20" VerticalAlignment="Top" FontFamily="Copperplate Gothic Light">
+            <TextBox x:Name="emailTB" Margin="35,270,35,0" Height="20" VerticalAlignment="Top" FontFamily="Copperplate Gothic Light">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -81,7 +81,7 @@
                 </TextBox.Resources>
             </TextBox>
 
-            <Button Click="AddOrder" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="35,270,400,40" Width="365" Height="25" Background="#e04e4e">
+            <Button Click="AddOrder" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="35,270,400,40" Width="365" Height="25" Background="#7ce04e">
                 <TextBlock x:Name="addTB" Text="Добавить/Изменить заказ" FontFamily="Copperplate Gothic Light"/>
                 <Button.Resources>
                     <Style TargetType="Border">

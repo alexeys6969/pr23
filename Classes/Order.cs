@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderingGifts_Шашин.Classes
 {
-    public class Customer
+    public class Order
     {
         public string fio_user {  get; set; }
         public string message_text { get; set; }
