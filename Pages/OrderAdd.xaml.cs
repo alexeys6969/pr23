@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace OrderingGifts_Шашин.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Main.xaml
+    /// Логика взаимодействия для OrderAdd.xaml
     /// </summary>
-    public partial class Main : Page
+    public partial class OrderAdd : Page
     {
-        public Main()
+        public OrderAdd()
         {
             InitializeComponent();
-        }
-
-        private void Gregory(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
