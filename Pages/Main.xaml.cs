@@ -27,6 +27,21 @@ namespace OrderingGifts_Шашин.Pages
 
         private void Gregory(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Gregory!", "Gregory!", MessageBoxButton.YesNo, MessageBoxImage.Information);
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void filter_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void search(object sender, TextChangedEventArgs e)
+        {
 
         }
     }

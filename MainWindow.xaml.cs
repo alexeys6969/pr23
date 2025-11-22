@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -20,9 +21,31 @@ namespace OrderingGifts_Шашин
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Pages.Main main;
         public MainWindow()
         {
             InitializeComponent();
+
+            main = new Pages.Main();
+            OpenPageMain();
+        }
+
+        public void OpenPageMain()
+        {
+            DoubleAnimation animation = new DoubleAnimation();
+            animation.From = 1;
+            animation.To = 0;
+            animation.Duration = TimeSpan.FromSeconds(0.2);
+            animation.Completed += delegate
+            {
+                frame.Navigate(main);
+                DoubleAnimation animation1 = new DoubleAnimation();
+                animation1.From = 0;
+                animation1.To = 1;
+                animation1.Duration = TimeSpan.FromSeconds(0.4);
+                frame.BeginAnimation(Frame.OpacityProperty, animation1);
+            };
+            frame.BeginAnimation(Frame.OpacityProperty, animation);
         }
     }
 }

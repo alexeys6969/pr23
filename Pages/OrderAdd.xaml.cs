@@ -24,5 +24,15 @@ namespace OrderingGifts_Шашин.Pages
         {
             InitializeComponent();
         }
+
+        private void AddOrder(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Gregory(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

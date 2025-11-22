@@ -8,7 +8,7 @@
       Title="Main">
 
     <Grid>
-        <Grid Background="#e04e4e" Width="800" Height="70" VerticalAlignment="Top">
+        <Grid Background="#e04e4e" Width="800" Height="70" VerticalAlignment="Top" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
@@ -26,7 +26,7 @@
                 <Image Source="/Images/plus.png" Width="20"/>
             </Button>
 
-            <TextBox TextChanged="search" Grid.Column="2" Height="40" Grid.ColumnSpan="2" Margin="0,15,102,15">
+            <TextBox TextChanged="search" Grid.Column="2" Height="40" Grid.ColumnSpan="2" Margin="0,15,102,15" FontFamily="Copperplate Gothic Light" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="10"/>
