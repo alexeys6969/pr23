@@ -30,11 +30,11 @@ namespace OrderingGifts_Шашин
             order_item = _order;
             if(_order.fio_user != null)
             {
-                fio_itm.Content = _order.fio_user;
-                mess_itm.Content = _order.message_text;
-                adress_itm.Content = _order.adress;
-                date_itm.Content = _order.dateSendMessage;
-                email_itm.Content = _order.email;
+                fio_itm.Text = _order.fio_user;
+                mess_itm.Text = _order.message_text;
+                adress_itm.Text = _order.adress;
+                date_itm.Text = _order.dateSendMessage;
+                email_itm.Text = _order.email;
             }
 
             DoubleAnimation op = new DoubleAnimation();

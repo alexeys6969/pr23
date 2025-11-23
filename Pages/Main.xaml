@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OrderingGifts_Шашин.Pages"
       mc:Ignorable="d" 
-      Title="Main">
+      Title="Main" d:Width="800" d:Height="450">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -20,8 +20,6 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
-            <Image Source="/Images/gift.png" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30"/>
 
             <Button Click="Add_Click" Grid.Column="1" Width="113" Height="40" Background="#2c2e2b" BorderBrush="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button.Resources>
