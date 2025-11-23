@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrderingGifts_Шашин.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,11 +22,14 @@ namespace OrderingGifts_Шашин
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Connection connect;
         public static Pages.Main main;
         public static MainWindow mainWindow;
         public MainWindow()
         {
             InitializeComponent();
+            connect = new Connection();
+            connect.LoadData(Connection.tabels.order);
             mainWindow = this;
             main = new Pages.Main();
             OpenPageMain();

@@ -4,6 +4,7 @@ using System.Data.OleDb;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace OrderingGifts_Шашин.Classes
@@ -77,6 +78,21 @@ namespace OrderingGifts_Шашин.Classes
             {
                 return -1;
             }
+        }
+
+        public bool ItsFio(string fio)
+        {
+            return Regex.IsMatch(fio.Trim(), @"^[А-ЯЁ][а-яё]+\s[А-ЯЁ][а-яё]+\s[А-ЯЁ][а-яё]+$");
+        }
+
+        public bool ItsDateTime(string dateStr)
+        {
+            return Regex.IsMatch(dateStr.Trim(), @"^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.(19|20)\d{2}\s([01][0-9]|2[0-3])\:[0-5][0-9]$");
+        }
+
+        public bool ItsEmail(string email)
+        {
+            return Regex.IsMatch(email.Trim(), @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
         }
     }
 }

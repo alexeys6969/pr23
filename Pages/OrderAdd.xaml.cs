@@ -22,15 +22,62 @@ namespace OrderingGifts_Шашин.Pages
     public partial class OrderAdd : Page
     {
         Order ord_itm;
-        public OrderAdd()
+        public OrderAdd(Order _order)
         {
             InitializeComponent();
+            ord_itm = _order;
 
+            if(_order.fio_user != null)
+            {
+                fioTB.Text = _order.fio_user;
+            }
         }
 
         private void AddOrder(object sender, RoutedEventArgs e)
         {
+            if (!MainWindow.connect.ItsFio(fioTB.Text))
+            {
+                MessageBox.Show("Укажите ФИО", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textTB.Text.Trim()))
+            {
+                MessageBox.Show("Укажите текст сообщения", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (textTB.Text.Length > 35)
+            {
+                MessageBox.Show($"Сообщение слишком длинное {'\n'}Максимальная длина 35 символов", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(adressTB.Text.Trim()))
+            {
+                MessageBox.Show("Укажите адрес", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (!MainWindow.connect.ItsDateTime(dateTB.Text))
+            {
+                MessageBox.Show("Укажите дату в верном формате", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (!MainWindow.connect.ItsEmail(emailTB.Text))
+            {
+                MessageBox.Show("Укажите адрес электронной почты в верном формате", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
+            if (ord_itm.fio_user == null)
+            {
+                int id = MainWindow.connect.SetActualId(Connection.tabels.order);
+                string query = $"INSERT INTO [order]([Код], [fio_user], [message_text], [adress], [dateSendMessage], [email]) VALUES ({id.ToString()}, '{fioTB.Text}', '{textTB.Text}', '{adressTB.Text}', '{dateTB.Text}', '{emailTB.Text}')";
+                var pc = MainWindow.connect.QueryAccess(query);
+                if (pc != null)
+                {
+                    MainWindow.connect.LoadData(Connection.tabels.order);
+                    MessageBox.Show("Успешное добавление клиента", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MainWindow.mainWindow.frame.Navigate(new Pages.Main());
+                }
+            }
         }
 
         private void Gregory(object sender, RoutedEventArgs e)

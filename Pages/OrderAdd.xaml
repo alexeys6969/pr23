@@ -62,7 +62,7 @@
                 </TextBox.Resources>
             </TextBox>
 
-            <Label Content="Введите дату и время (дд.мм.гггг чч.мм)" Height="28" Foreground="Black" FontFamily="Copperplate Gothic Light" FontSize="16" Margin="35,185,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="Введите дату и время (дд.мм.гггг чч:мм)" Height="28" Foreground="Black" FontFamily="Copperplate Gothic Light" FontSize="16" Margin="35,185,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox x:Name="dateTB" Margin="35,215,35,0" Height="20" VerticalAlignment="Top" FontFamily="Copperplate Gothic Light">
                 <TextBox.Resources>
                     <Style TargetType="Border">
