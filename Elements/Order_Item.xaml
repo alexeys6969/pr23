@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:OrderingGifts_Шашин"
              mc:Ignorable="d">
-    <Border CornerRadius="10,10,10,10" Margin="35,20,25,20" BorderThickness="1" BorderBrush="#e04e4e" Height="200" Width="730" Background="White">
+    <Border x:Name="border" CornerRadius="10,10,10,10" Margin="35,20,25,20" BorderThickness="1" BorderBrush="#e04e4e" Height="200" Width="730" Background="White">
         <Grid>
             <Label Content="Николаев Николай Николаевич" x:Name="fio_itm" FontFamily="Copperplate Gothic Bold" FontSize="24" Margin="20,15,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Label Content="Очень тебя люблю!!!" x:Name="mess_itm" FontFamily="Copperplate Gothic Light" FontSize="20" Margin="20,50,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
@@ -13,7 +13,7 @@
             <Label Content="22.11.2025 11:00" x:Name="date_itm" FontFamily="Copperplate Gothic Light" FontSize="20" Margin="20,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Label Content="podarok.gift@gmail.com" x:Name="email_itm" FontFamily="Copperplate Gothic Light" FontSize="20" Margin="20,155,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
-            <Button Margin="556,25,40,99" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Height="45" Background="#7ce04e" BorderThickness="0">
+            <Button Click="EditOrder" Margin="556,25,40,99" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Height="45" Background="#7ce04e" BorderThickness="0">
                 <Image Source="/Images/redac.png" Width="30"/>
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -22,7 +22,7 @@
                 </Button.Resources>
             </Button>
 
-            <Button Margin="0,113,40,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Height="45" Background="#e04e4e" BorderThickness="0">
+            <Button Click="RemoveOrder" Margin="0,113,40,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Height="45" Background="#e04e4e" BorderThickness="0">
                 <Image Source="/Images/del.png" Width="30"/>
                 <Button.Resources>
                     <Style TargetType="Border">

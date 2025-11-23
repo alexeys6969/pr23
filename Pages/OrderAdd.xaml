@@ -81,7 +81,7 @@
             </TextBox>
 
             <Button Click="AddOrder" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="35,0,35,40" Width="358" Height="25" Background="#7ce04e">
-                <TextBlock x:Name="addTB" Text="Добавить/Изменить заказ" FontFamily="Copperplate Gothic Light"/>
+                <TextBlock x:Name="addTB" Text="Добавить заказ" FontFamily="Copperplate Gothic Light"/>
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="8"/>

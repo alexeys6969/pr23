@@ -24,6 +24,11 @@ namespace OrderingGifts_Шашин.Pages
         public Main()
         {
             InitializeComponent();
+            MainWindow.connect.LoadData(Connection.tabels.order);
+            foreach(Order ord in MainWindow.connect.order)
+            {
+                parrent.Children.Add(new Order_Item(ord));
+            }
         }
 
         private void Gregory(object sender, RoutedEventArgs e)

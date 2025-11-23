@@ -27,9 +27,15 @@ namespace OrderingGifts_Шашин.Pages
             InitializeComponent();
             ord_itm = _order;
 
-            if(_order.fio_user != null)
+            if(ord_itm.fio_user != null)
             {
-                fioTB.Text = _order.fio_user;
+                addLabel.Content = "Изменение заказа";
+                addTB.Text = "Изменить заказ";
+                fioTB.Text = ord_itm.fio_user;
+                textTB.Text = ord_itm.message_text;
+                adressTB.Text = ord_itm.adress;
+                dateTB.Text = ord_itm.dateSendMessage;
+                emailTB.Text = ord_itm.email;
             }
         }
 
@@ -74,8 +80,31 @@ namespace OrderingGifts_Шашин.Pages
                 if (pc != null)
                 {
                     MainWindow.connect.LoadData(Connection.tabels.order);
-                    MessageBox.Show("Успешное добавление клиента", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Успешное добавление записи", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
                     MainWindow.mainWindow.frame.Navigate(new Pages.Main());
+                } else
+                {
+                    MessageBox.Show("Запрос не обработан", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            } else
+            {
+                string query = $"UPDATE [order] SET " +
+                   $"[fio_user] = '{fioTB.Text}', " +
+                   $"[message_text] = '{textTB.Text}', " +
+                   $"[adress] = '{adressTB.Text}', " +
+                   $"[dateSendMessage] = '{dateTB.Text}', " +
+                   $"[email] = '{emailTB.Text}' " +
+                   $"WHERE [Код] = {ord_itm.Id}";
+                var pc = MainWindow.connect.QueryAccess(query);
+                if (pc != null)
+                {
+                    MainWindow.connect.LoadData(Connection.tabels.order);
+                    MessageBox.Show("Успешное изменение записи", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MainWindow.mainWindow.frame.Navigate(new Pages.Main());
+                }
+                else
+                {
+                    MessageBox.Show("Запрос не обработан", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
