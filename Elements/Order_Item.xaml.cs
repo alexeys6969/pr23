@@ -33,7 +33,7 @@ namespace OrderingGifts_Шашин
                 fio_itm.Text = _order.fio_user;
                 mess_itm.Text = _order.message_text;
                 adress_itm.Text = _order.adress;
-                date_itm.Text = _order.dateSendMessage;
+                date_itm.Text = _order.dateSendMessage.ToString("dd.MM.yyyy HH:mm");
                 email_itm.Text = _order.email;
             }
 

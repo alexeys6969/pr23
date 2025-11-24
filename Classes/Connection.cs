@@ -50,7 +50,7 @@ namespace OrderingGifts_Шашин.Classes
                     newOrder.fio_user = Convert.ToString(itemQuery.GetValue(1));
                     newOrder.message_text = Convert.ToString(itemQuery.GetValue(2));
                     newOrder.adress = Convert.ToString(itemQuery.GetValue(3));
-                    newOrder.dateSendMessage = Convert.ToString(itemQuery.GetValue(4));
+                    newOrder.dateSendMessage = Convert.ToDateTime(itemQuery.GetValue(4));
                     newOrder.email = Convert.ToString(itemQuery.GetValue(5));
                     order.Add(newOrder);
                 }

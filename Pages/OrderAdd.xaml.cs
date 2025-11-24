@@ -34,7 +34,7 @@ namespace OrderingGifts_Шашин.Pages
                 fioTB.Text = ord_itm.fio_user;
                 textTB.Text = ord_itm.message_text;
                 adressTB.Text = ord_itm.adress;
-                dateTB.Text = ord_itm.dateSendMessage;
+                dateTB.Text = ord_itm.dateSendMessage.ToString("dd.MM.yyyy HH:mm");
                 emailTB.Text = ord_itm.email;
             }
         }

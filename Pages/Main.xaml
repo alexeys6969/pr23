@@ -30,7 +30,7 @@
                 <Image Source="/Images/plus.png" Width="20"/>
             </Button>
 
-            <TextBox TextChanged="search" Grid.Column="2" Height="40" Margin="20,0,100,0" FontFamily="Segoe UI" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+            <TextBox Grid.Column="2" Height="40" Margin="20,0,100,0" FontFamily="Segoe UI" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -61,7 +61,7 @@
             </Grid.RowDefinitions>
 
             <Button Click="filter_click" Grid.Row="0" Margin="25,10,0,10" VerticalAlignment="Center" Background="Transparent" Height="25" HorizontalAlignment="Left" BorderThickness="0">
-                <TextBlock Text="Фильтры" TextDecorations="Underline" FontFamily="Segoe UI" FontSize="14"/>
+                <TextBlock Text="Сортировка" TextDecorations="Underline" FontFamily="Segoe UI" FontSize="14"/>
             </Button>
 
             <ScrollViewer x:Name="scroll_main" Grid.Row="1">

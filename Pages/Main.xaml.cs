@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace OrderingGifts_Шашин.Pages
 {
@@ -21,14 +22,12 @@ namespace OrderingGifts_Шашин.Pages
     /// </summary>
     public partial class Main : Page
     {
+        public bool isClicked = false;
         public Main()
         {
             InitializeComponent();
             MainWindow.connect.LoadData(Connection.tabels.order);
-            foreach(Order ord in MainWindow.connect.order)
-            {
-                parrent.Children.Add(new Order_Item(ord));
-            }
+            RefreshInterface();
         }
 
         private void Gregory(object sender, RoutedEventArgs e)
@@ -43,12 +42,52 @@ namespace OrderingGifts_Шашин.Pages
 
         private void filter_click(object sender, RoutedEventArgs e)
         {
+            if (!isClicked)
+            {
+                parrent.Children.Clear();
+                string query = "SELECT * FROM [order];";
+                var pc = MainWindow.connect.QueryAccess(query);
+
+                if (pc != null)
+                {
+                    MainWindow.connect.LoadData(Connection.tabels.order);
+                    RefreshInterfaceWithSorting();
+                }
+                isClicked = true;
+            } else
+            {
+                parrent.Children.Clear();
+                string query = "SELECT * FROM [order];";
+                var pc = MainWindow.connect.QueryAccess(query);
+
+                if (pc != null)
+                {
+                    MainWindow.connect.LoadData(Connection.tabels.order);
+                    RefreshInterface();
+                }
+                isClicked = false;
+            }
+
 
         }
 
-        private void search(object sender, TextChangedEventArgs e)
+        public void RefreshInterfaceWithSorting()
         {
+            var sortedOrders = MainWindow.connect.order.OrderBy(order => order.dateSendMessage).ToList();
 
+            foreach (Order ord in sortedOrders)
+            {
+                parrent.Children.Add(new Order_Item(ord));
+            }
+        }
+
+        public void RefreshInterface()
+        {
+            parrent.Children.Clear();
+            foreach (Order ord in MainWindow.connect.order)
+            {
+                parrent.Children.Add(new Order_Item(ord));
+            }
         }
     }
 }
